@@ -18,7 +18,10 @@ class Solutions:
 		
 		
 sol=Solutions()
-sol.question1('abc','CCB')		
+# INPUT 1
+#sol.question1('anagram','nagaram')
+# INPUT 2
+#sol.question1('','')				
 		
 
 	
