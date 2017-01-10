@@ -87,6 +87,7 @@ sol=Solutions()
 #sol.question2('abaaba')			
 # Q2 INPUT 3
 #sol.question2('abacdfgdcaba')			
-		
+# Q2 INPUT 4
+#sol.question2('abacdedcaba')			
 
 	
