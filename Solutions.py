@@ -77,7 +77,16 @@ class Solutions:
 		
 		
 sol=Solutions()
-	
+# Q1 INPUT 1
+#sol.question1('anagram','nagaram')
+# Q1 INPUT 2
+#sol.question1('','')
+# Q2 INPUT 1
+#sol.question2('babcbabcbaccba')
+# Q2 INPUT 2
+#sol.question2('abaaba')			
+# Q2 INPUT 3
+#sol.question2('abacdfgdcaba')			
 		
 
 	
