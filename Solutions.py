@@ -120,7 +120,7 @@ class LinkedList:
 		if(self.head is not None):
 			while(count < m ):
 				if(ref_ptr is None):
-					print "%d is greater than node in list" %(m)
+					print "%d is not in the list" %(m)
 					return
 
 				ref_ptr = ref_ptr.next
@@ -129,17 +129,10 @@ class LinkedList:
 		while(ref_ptr is not None):
 			main_ptr = main_ptr.next
 			ref_ptr = ref_ptr.next
-
-		print "Node no. %d from last is %d " %(m, main_ptr.data)
+		print main_ptr.data
+		
 
 llist = LinkedList()
-llist.push(20)
-llist.push(4)
-llist.push(15)
-llist.push(35)
-
-llist.question5(2)
-		
 sol=Solutions()
 # Q1 INPUT 1
 #sol.question1('anagram','nagaram')
@@ -198,7 +191,23 @@ edges = [ ("A", "B", 0), ("A", "D", 2),
 sol.question3( nodes, edges )
 #Expected Output:[('A', 'B', 0), ('B', 'D', 0), ('B', 'C', 1), ('D', 'E', 1)]	  	  
 '''
-
-#sol.prim( nodes, edges )
-#print "prim:", sol.question3( nodes, edges )
-	
+# Q5 INPUT 1
+'''
+llist.push(1)
+llist.push(2)
+llist.push(3)
+llist.push(4)
+llist.push(5)
+llist.question5(3)
+#Expected Output: 3	
+'''
+# Q5 INPUT 2
+'''
+llist.push(1)
+llist.push(2)
+llist.push(3)
+llist.push(4)
+llist.push(5)
+llist.question5(10)
+#Expected Output: 10 is not in the list	
+'''
