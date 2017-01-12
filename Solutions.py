@@ -96,21 +96,74 @@ class Solutions:
 					if e[ 2 ] not in used:
 						heappush( usable_edges, e )
 		return mst	
+
+class Node(object):
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+class LinkedList:
+# Function to initialize head
+	def __init__(self):
+		self.head = None
+
+# Function to insert a new node at the beginning
+	def push(self, new_data):
+		new_node = Node(new_data)
+		new_node.next = self.head
+		self.head = new_node
+
+	def question5(self, m):
+		main_ptr = self.head
+		ref_ptr = self.head 
+
+		count = 0
+		if(self.head is not None):
+			while(count < m ):
+				if(ref_ptr is None):
+					print "%d is greater than node in list" %(m)
+					return
+
+				ref_ptr = ref_ptr.next
+				count += 1
+
+		while(ref_ptr is not None):
+			main_ptr = main_ptr.next
+			ref_ptr = ref_ptr.next
+
+		print "Node no. %d from last is %d " %(m, main_ptr.data)
+
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(35)
+
+llist.question5(2)
 		
 sol=Solutions()
 # Q1 INPUT 1
 #sol.question1('anagram','nagaram')
+#Expected Output:false
 # Q1 INPUT 2
 #sol.question1('','')
+#Expected Output: false
+# Q1 INPUT 3
+#sol.question1('323','323')
+#Expected Output: true
 # Q2 INPUT 1
 #sol.question2('babcbabcbaccba')
+#Expected Output:abcbabcba
 # Q2 INPUT 2
-#sol.question2('abaaba')			
+#sol.question2('abaaba')	
+#Expected Output: abaaba		
 # Q2 INPUT 3
-#sol.question2('abacdfgdcaba')			
+#sol.question2('abacdfgdcaba')
+#Expected Output:aba			
 # Q2 INPUT 4
 #sol.question2('abacdedcaba')
-nodes = list("ABCDEFG")
+#Expected Output:abacdedcaba
+
+#nodes = list("ABCDEFG")
 edges = [ ("A", "B", 7), ("A", "D", 5),
           ("B", "C", 8), ("B", "D", 9), ("B", "E", 7),
       ("C", "E", 5),
@@ -118,5 +171,5 @@ edges = [ ("A", "B", 7), ("A", "D", 5),
       ("E", "F", 8), ("E", "G", 9),
       ("F", "G", 11)]			
 #sol.prim( nodes, edges )
-print "prim:", sol.question3( nodes, edges )
+#print "prim:", sol.question3( nodes, edges )
 	
