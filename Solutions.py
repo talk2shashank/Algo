@@ -120,7 +120,7 @@ class LinkedList:
 		if(self.head is not None):
 			while(count < m ):
 				if(ref_ptr is None):
-					print "%d is not in the list" %(m)
+					print "%d value is not in the list" %(m)
 					return
 
 				ref_ptr = ref_ptr.next
