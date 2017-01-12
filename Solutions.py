@@ -211,3 +211,13 @@ llist.push(5)
 llist.question5(10)
 #Expected Output: 10 is not in the list	
 '''
+# Q5 INPUT 3
+'''
+llist.push(0)
+llist.push(0)
+llist.push(3)
+llist.push(4)
+llist.push(5)
+llist.question5(5)
+#Expected Output: 0
+'''	
