@@ -171,9 +171,34 @@ edges = [ ("A", "B", 7), ("A", "D", 5),
       ("D", "E", 15), ("D", "F", 6),
       ("E", "F", 8), ("E", "G", 9),
       ("F", "G", 11)]
+
+sol.question3( nodes, edges )
+#Expected Output:[('A', 'D', 5), ('D', 'F', 6), ('A', 'B', 7), ('B', 'E', 7), ('E', 'C', 5), ('E', 'G', 9)]
 '''
-#sol.question3( nodes, edges )
-#Expected Output:[('A', 'D', 5), ('D', 'F', 6), ('A', 'B', 7), ('B', 'E', 7), ('E', 'C', 5), ('E', 'G', 9)]	  
+# Q3 INPUT 2
+'''
+nodes = list("ABCDEFG")
+edges = [ ("A", "B", 0), ("A", "D", 2),
+          ("B", "C", 0), ("B", "D", 0), ("B", "E", 1),
+      ("C", "E", 1),
+      ("D", "E", 0), ("D", "F", 1),
+      ("E", "F", 0), ("E", "G", 0),
+      ("F", "G", 1)]
+
+sol.question3( nodes, edges )
+#Expected Output:[('A', 'B', 0), ('B', 'C', 0), ('B', 'D', 0), ('D', 'E', 0), ('E', 'F', 0), ('E', 'G', 0)]	  	  
+'''
+# Q3 INPUT 3
+'''
+nodes = list("ABCDE")
+edges = [ ("A", "B", 0), ("A", "D", 2),
+          ("B", "C", 1), ("B", "D", 0), ("D", "E", 1),
+      ("C", "D", 1)]
+  
+sol.question3( nodes, edges )
+#Expected Output:[('A', 'B', 0), ('B', 'D', 0), ('B', 'C', 1), ('D', 'E', 1)]	  	  
+'''
+
 #sol.prim( nodes, edges )
 #print "prim:", sol.question3( nodes, edges )
 	
