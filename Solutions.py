@@ -95,7 +95,7 @@ class Solutions:
 				for e in conn[ n2 ]:
 					if e[ 2 ] not in used:
 						heappush( usable_edges, e )
-		return mst	
+		print mst	
 
 class Node(object):
   def __init__(self, data):
@@ -162,14 +162,18 @@ sol=Solutions()
 # Q2 INPUT 4
 #sol.question2('abacdedcaba')
 #Expected Output:abacdedcaba
-
-#nodes = list("ABCDEFG")
+# Q3 INPUT 1
+'''
+nodes = list("ABCDEFG")
 edges = [ ("A", "B", 7), ("A", "D", 5),
           ("B", "C", 8), ("B", "D", 9), ("B", "E", 7),
       ("C", "E", 5),
       ("D", "E", 15), ("D", "F", 6),
       ("E", "F", 8), ("E", "G", 9),
-      ("F", "G", 11)]			
+      ("F", "G", 11)]
+'''
+#sol.question3( nodes, edges )
+#Expected Output:[('A', 'D', 5), ('D', 'F', 6), ('A', 'B', 7), ('B', 'E', 7), ('E', 'C', 5), ('E', 'G', 9)]	  
 #sol.prim( nodes, edges )
 #print "prim:", sol.question3( nodes, edges )
 	
