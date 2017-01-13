@@ -16,4 +16,8 @@ Question 3:
 Prim’s algorithm is also a Greedy algorithm. It starts with an empty spanning tree. The idea is to maintain two sets of vertices. The first set contains the vertices already included in the MST, the other set contains the vertices not yet included. At every step, it considers all the edges that connect the two sets, and picks the minimum weight edge from these edges. After picking the edge, it moves the other endpoint of the edge to the set containing MST.Time Complexity of the above program is O(V^2). 
 
 Question 4:
+As we trace the two paths from both nodes up to the root, eventually it will merge into one single path. The LCA is the exact first intersection node where both paths merged into a single path. Once we reached the first node which is already marked as visited, we immediately return that node as the LCA.The run time complexity of this approach is O(h), where h is the tree’s height. The space complexity is also O(h), since it can mark at most 2h nodes.
 
+Question 5
+For the nth element from the end of the list we can use two pointers. Both of them start from the beginning of the list and then we move one of the two by following n-1 nodes so that the two pointers have a difference of n nodes.From that point and on you iterate so that in every step we move each pointer by one position; first we are moving the pointer that is further ahead of the two. When we can not move that pointer further (say because the next pointer is null), then we stop. At that point, the other pointer is pointing to the 8th element of the list counting from the end.
+So, total complexity is the number of assignments that we have performed to the pointers by following the `next' links of the list which is n+(n−8)=2n−8n+(n−8)=2n−8, which is O(n)
