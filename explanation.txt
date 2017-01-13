@@ -6,4 +6,9 @@ Space complexty of the code is O(n) as I am itertating over n elements and stori
 Time complexty is also O(n) because I am interating over n elements and converting into to ascci code. 
 Both the ascii codes are compared in linear time. 
 
+Question 2:
+To find the longest palindrome substrinng in a string. I itrate over the string considering each character as the center of the string. 
+I check for add length and even length palindrome. 
+Time complexity O(n^2) for checking the palindrome of odd length and even length in while loop. And space complexity is O(1). 
+
 
