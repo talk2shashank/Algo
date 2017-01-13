@@ -96,10 +96,41 @@ class LinkedList:
 			main_ptr = main_ptr.next
 			ref_ptr = ref_ptr.next
 		print main_ptr.data
+class Node1:
+    
+    def __init__(self, key):
+        self.key =  key
+        self.left = None
+        self.right = None
+	def findPath( root, path, k):
+		if root is None:
+			return False
+		path.append(root.key)
+    
+		if root.key == k :
+			return True
+		if ((root.left != None and findPath(root.left, path, k)) or
+				(root.right!= None and findPath(root.right, path, k))):
+			return True
+		path.pop()
+		return False
+	def findLCA(root, n1, n2):
+		path1 = []
+		path2 = []
+		if (not findPath(root, path1, n1) or not findPath(root, path2, n2)):
+			return -1
+		i = 0
+		while(i < len(path1) and i < len(path2)):
+			if path1[i] != path2[i]:
+				break
+			i += 1
+		return path1[i-1]
+	def question4(self,T, r, n1, n2):
+		n.findLCA()
 		
-
 llist = LinkedList()
 sol=Solutions()
+n=Node1(1)
 # Q1 INPUT 1
 #sol.question1('anagram','nagaram')
 #Expected Output:false
@@ -156,6 +187,22 @@ edges = [ ("A", "B", 0), ("A", "D", 2),
   
 sol.question3( nodes, edges )
 #Expected Output:[('A', 'B', 0), ('B', 'D', 0), ('B', 'C', 1), ('D', 'E', 1)]	  	  
+'''
+
+# Q4 INPUT 1
+'''
+n.question4([0, 1, 0, 0, 0],[0, 0, 0, 0, 0],[0, 0, 0, 0, 0],[1, 0, 0, 0, 1],[0, 0, 0, 0, 0]],3,1,4)
+#Expected Output:3
+'''
+# Q4 INPUT 2
+'''
+n.question4([0, 0, 0, 0, 0],[0, 1, 0, 0, 0],[0, 0, 0, 0, 0],[0, 0, 0, 0, 1],[0, 0, 0, 0, 0]],2,1,1)
+#Expected Output:1
+'''
+# Q4 INPUT 3
+'''
+n.question4([0, 0, 0, 0, 0],[0, 0, 0, 0, 0],[0, 0, 0, 0, 0],[1, 0, 0, 0, 0],[0, 0, 0, 0, 0]],1,1,0)
+#Expected Output:0
 '''
 # Q5 INPUT 1
 '''
