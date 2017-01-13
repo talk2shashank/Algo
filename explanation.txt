@@ -12,3 +12,8 @@ I check for add length and even length palindrome.
 Time complexity O(n^2) for checking the palindrome of odd length and even length in while loop. And space complexity is O(1). 
 
 
+Question 3:
+Prim’s algorithm is also a Greedy algorithm. It starts with an empty spanning tree. The idea is to maintain two sets of vertices. The first set contains the vertices already included in the MST, the other set contains the vertices not yet included. At every step, it considers all the edges that connect the two sets, and picks the minimum weight edge from these edges. After picking the edge, it moves the other endpoint of the edge to the set containing MST.Time Complexity of the above program is O(V^2). 
+
+Question 4:
+
