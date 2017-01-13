@@ -1,1 +1,9 @@
 Question 1:
+To find the wheather two string are anagrams. I decided to checked if two strings have same ascii code.
+I converted the string in character array and in same loop I converted each character into its ascii code. 
+I called the helper function to the above task. Ascii codes for both the strings are compared and boolen is return if the match is successfull. 
+Space complexty of the code is O(n) as I am itertating over n elements and storing the elements in the character array. 
+Time complexty is also O(n) because I am interating over n elements and converting into to ascci code. 
+Both the ascii codes are compared in linear time. 
+
+
