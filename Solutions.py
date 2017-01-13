@@ -16,66 +16,32 @@ class Solutions:
 			ascii_multiply = s * ascii_multiply
 		return ascii_multiply
 	
-	def question2(self,a):
-		N = len(a)
-		if N == 0:
-			return
-		N = 2*N+1 # Position count
-		L = [0] * N
-		L[0] = 0
-		L[1] = 1
-		C = 1	 # centerPosition
-		R = 2	 # centerRightPosition
-		i = 0 # currentRightPosition
-		iMirror = 0	 # currentLeftPosition
-		maxLPSLength = 0
-		maxLPSCenterPosition = 0
-		start = -1
-		end = -1
-		diff = -1
-
-		# Uncomment it to print LPS Length array
-		# printf("%d %d ", L[0], L[1]);
-		for i in xrange(2,N):
-	
-		# get currentLeftPosition iMirror for currentRightPosition i
-			iMirror = 2*C-i
-			L[i] = 0
-			diff = R - i
-		# If currentRightPosition i is within centerRightPosition R
-			if diff > 0:
-				L[i] = min(L[iMirror], diff)
-
-		# Attempt to expand palindrome centered at currentRightPosition i
-		# Here for odd positions, we compare characters and
-		# if match then increment LPS Length by ONE
-		# If even position, we just increment LPS by ONE without
-		# any character comparison
-			try:
-				while ((i+L[i]) < N and (i-L[i]) > 0) and \
-					(((i+L[i]+1) % 2 == 0) or \
-					(a[(i+L[i]+1)/2] == a[(i-L[i]-1)/2])):
-					L[i]+=1
-			except Exception as e:
-				pass
-
-			if L[i] > maxLPSLength:	 # Track maxLPSLength
-				maxLPSLength = L[i]
-				maxLPSCenterPosition = i
-
-		# If palindrome centered at currentRightPosition i
-		# expand beyond centerRightPosition R,
-		# adjust centerPosition C based on expanded palindrome.
-			if i + L[i] > R:
-				C = i
-				R = i + L[i]
-
+	def question2(self,string):
+		maxLength = 1
+		start = 0
+		length = len(string)
+		low = 0
+		high = 0
+		for i in xrange(1, length):
+			low = i - 1
+			high = i
+			while low >= 0 and high < length and string[low] == string[high]:
+				if high - low + 1 > maxLength:
+					start = low
+					maxLength = high - low + 1
+				low -= 1
+				high += 1
+			low = i - 1
+			high = i + 1
+			while low >= 0 and high < length and string[low] == string[high]:
+				if high - low + 1 > maxLength:
+					start = low
+					maxLength = high - low + 1
+				low -= 1
+				high += 1
+		print string[start:start + maxLength]
 		
-		start = (maxLPSCenterPosition - maxLPSLength) / 2
-		end = start + maxLPSLength - 1
-		print "LPS of string is " + a + " : ",
-		print a[start:end+1],
-		print "\n",
+	
 	def question3(self,nodes, edges ):
 		conn = defaultdict( list )
 		for n1,n2,c in edges:
@@ -147,8 +113,8 @@ sol=Solutions()
 #sol.question2('babcbabcbaccba')
 #Expected Output:abcbabcba
 # Q2 INPUT 2
-#sol.question2('abaaba')	
-#Expected Output: abaaba		
+#sol.question2('abaabaabaabaabaabaabaabaabaabaabaadbaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaaba')	
+#Expected Output: baabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaabaab		
 # Q2 INPUT 3
 #sol.question2('abacdfgdcaba')
 #Expected Output:aba			
