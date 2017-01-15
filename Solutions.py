@@ -150,7 +150,7 @@ n=Node1(1)
 #sol.question2('abacdfgdcaba')
 #Expected Output:aba			
 # Q2 INPUT 4
-#sol.question2('abacdedcaba')
+#sol.question2('abacded')
 #Expected Output:abacdedcaba
 # Q3 INPUT 1
 '''
