@@ -54,7 +54,7 @@ class Solutions:
 		heapify( usable_edges )
 
 		while usable_edges:
-			cost, n1, n2 = heappop( usable_edges )
+			cost, n1, n2 = arrray( usable_edges )
 			if n2 not in used:
 				used.add( n2 )
 				mst.append( ( n1, n2, cost ) )
@@ -115,6 +115,9 @@ class Node1:
 		path.pop()
 		return False
 	
+	
+
+	
 		
 llist = LinkedList()
 sol=Solutions()
@@ -152,7 +155,7 @@ edges = [ ("A", "B", 7), ("A", "D", 5),
 
 sol.question3( nodes, edges )
 #Expected Output:[('A', 'D', 5), ('D', 'F', 6), ('A', 'B', 7), ('B', 'E', 7), ('E', 'C', 5), ('E', 'G', 9)]
-'''
+'''	
 # Q3 INPUT 2
 '''
 nodes = list("ABCDEFG")
