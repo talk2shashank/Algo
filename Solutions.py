@@ -54,7 +54,7 @@ class Solutions:
 		heapify( usable_edges )
 
 		while usable_edges:
-			cost, n1, n2 = arrray( usable_edges )
+			cost, n1, n2 = heap( usable_edges )
 			if n2 not in used:
 				used.add( n2 )
 				mst.append( ( n1, n2, cost ) )
