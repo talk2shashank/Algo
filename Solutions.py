@@ -25,6 +25,19 @@ class Solutions:
 			else:
 				dupes.append(n)
 			print(dupes)
+	def replceString(self,string1):
+		stringlength= len(string1)
+		spaces = 0
+		newstr=[]
+		#print(new_length)
+		for n in string1:
+			if n !=" ":
+				newstr.append(n)
+			else:
+				newstr.append("0")
+				newstr.append("2")
+				newstr.append("%")
+		return ''.join(newstr)		
 	def question2(self,string):
 		maxLength = 1
 		start = 0
