@@ -15,7 +15,16 @@ class Solutions:
 		for s in ascii_string_array:
 			ascii_multiply = s * ascii_multiply
 		return ascii_multiply
-	
+	def uniquechars(self,str):
+		if len(str) > 256:
+			return False
+		dupes=[]
+		for n in str:
+			if n in dupes:
+				return False
+			else:
+				dupes.append(n)
+			print(dupes)
 	def question2(self,string):
 		maxLength = 1
 		start = 0
