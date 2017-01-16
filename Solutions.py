@@ -24,7 +24,7 @@ class Solutions:
 				return False
 			else:
 				dupes.append(n)
-			print(dupes)
+		return dupes 
 	def replceString(self,string1):
 		stringlength= len(string1)
 		spaces = 0
