@@ -194,8 +194,8 @@ sol.question3( nodes, edges )
 # Q3 INPUT 3
 '''
 nodes = list("ABCDE")
-edges = [ ("A", "B", 0), ("A", "D", 2),
-          ("B", "C", 1), ("B", "D", 0), ("D", "E", 1),
+edges = [ ("A", "B", 1), ("A", "D", 1),
+          ("B", "C", 1), ("B", "D", 1), ("D", "E", 1),
       ("C", "D", 1)]
   
 sol.question3( nodes, edges )
