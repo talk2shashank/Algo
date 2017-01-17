@@ -83,7 +83,7 @@ class Solutions:
 				for e in conn[ n2 ]:
 					if e[ 2 ] not in used:
 						heappush( usable_edges, e )
-		print mst	
+		return mst	
 
 class Node(object):
   def __init__(self, data):
