@@ -161,7 +161,49 @@ class Node1:
 				low -= 1
 				high += 1
 		print string[start:start + maxLength]
-
+class Node2:
+    
+    def __init__(self, key):
+        self.key =  key
+        self.left = None
+        self.right = None
+	def findPath_helper( root, path, k):
+		if root is None:
+			return False
+		path.append(root.key)
+    
+		if root.key == k :
+			return True
+		if ((root.left != None and findPath(root.left, path, k)) or
+				(root.right!= None and findPath(root.right, path, k))):
+			return True
+		path.pop()
+		return False
+	
+	def findnode_helper(self,string):
+		maxLength = 1
+		start = 0
+		length = len(string)
+		low = 0
+		high = 0
+		for i in xrange(1, length):
+			low = i - 1
+			high = i
+			while low >= 0 and high < length and string[low] == string[high]:
+				if high - low + 1 > maxLength:
+					start = low
+					maxLength = high - low + 1
+				low -= 1
+				high += 1
+			low = i - 1
+			high = i + 1
+			while low >= 0 and high < length and string[low] == string[high]:
+				if high - low + 1 > maxLength:
+					start = low
+					maxLength = high - low + 1
+				low -= 1
+				high += 1
+		print string[start:start + maxLength]
 	
 		
 llist = LinkedList()
