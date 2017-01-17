@@ -88,7 +88,7 @@ class Solutions:
 class Node(object):
   def __init__(self, data):
     self.data = data
-    self.next = None
+    self.next = next
 class LinkedList:
 # Function to initialize head
 	def __init__(self):
