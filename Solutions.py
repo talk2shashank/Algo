@@ -160,7 +160,18 @@ class Node1:
 			return True
 		path.pop()
 		return False	
-	
+	def findPath_helper3( root1):
+		if root is None:
+			return False
+		path.append(root.key)
+    
+		if root.key == k :
+			return True
+		if ((root.left != None and findPath(root.left, path, k)) or
+				(root.right!= None and findPath(root.right, path, k))):
+			return True
+		path.pop()
+		return False
 	def findnode(self,string):
 		maxLength = 1
 		start = 0
