@@ -84,7 +84,30 @@ class Solutions:
 					if e[ 2 ] not in used:
 						heappush( usable_edges, e )
 		return mst	
-
+	def findlongestNode(self,string):
+		maxLength = 1
+		start = 0
+		length = len(string)
+		low = 0
+		high = 0
+		for i in xrange(1, length):
+			low = i - 1
+			high = i
+			while low >= 0 and high < length and string[low] == string[high]:
+				if high - low + 1 > maxLength:
+					start = low
+					maxLength = high - low + 1
+				low -= 1
+				high += 1
+			low = i - 1
+			high = i + 1
+			while low >= 0 and high < length and string[low] == string[high]:
+				if high - low + 1 > maxLength:
+					start = low
+					maxLength = high - low + 1
+				low -= 1
+				high += 1
+		print string[start:start + maxLength]
 class Node(object):
   def __init__(self, data):
     self.data = data
