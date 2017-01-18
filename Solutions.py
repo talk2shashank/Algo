@@ -84,7 +84,7 @@ class Solutions:
 					if e[ 2 ] not in used:
 						heappush( usable_edges, e )
 		return mst	
-	def findlongestNode(self,string):
+	def findlongestString(self,string):
 		maxLength = 1
 		start = 0
 		length = len(string)
@@ -159,6 +159,18 @@ class Node1:
 			return True
 		path.pop()
 		return False
+	def longestPath( root, path, k):
+		if root is None:
+			return False
+		path.append(root.key)
+    
+		if root.key == k :
+			return True
+		if ((root.left != None and findPath(root.left, path, k)) or
+				(root.right!= None and findPath(root.right, path, k))):
+			return True
+		path.pop()
+		return False	
 	def findPath_helper1( root):
 		if root is None:
 			return False
