@@ -183,7 +183,16 @@ class Node1:
 				low -= 1
 				high += 1
 		print string[start:start + maxLength]
-		
+	def Removeuniquechars(self,str):
+		if len(str) > 256:
+			return False
+		dupes=[]
+		for n in str:
+			if n in dupes:
+				return False
+			else:
+				dupes.append(n)
+		return dupes 	
 	def longestPath( root, path, k):
 		if root is None:
 			return False
